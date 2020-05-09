@@ -18,5 +18,6 @@ namespace LinqConsoleApp
         {
             return Ename + " (" + Empno + ")";
         }
+   
     }
 }
