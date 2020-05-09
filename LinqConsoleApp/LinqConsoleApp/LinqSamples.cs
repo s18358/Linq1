@@ -386,11 +386,13 @@ namespace LinqConsoleApp
         public void Przyklad12()
         {
             Console.WriteLine("Przykład 12");
-            var res = Emps.SelectMany(d => Depts, (dept, emp) => new
-            {
-                emp,
-                dept
-            });
+            var res = from emp in Emps
+                      from dept in Depts
+                      select new
+                      {
+                          emp.Ename,
+                          dept.Dname
+                      };
             res.ToList().ForEach(r => Console.WriteLine(r));
         }
     }
